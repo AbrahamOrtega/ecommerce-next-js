@@ -67,7 +67,7 @@ export default function Navbar() {
           </div>
         </div>
         {isOpen && (
-          <div className="flex flex-col w-full items-center gap-y-[28px]">
+          <div className="flex flex-col w-full items-center gap-y-[28px] pb-[32px]">
             <ul className="flex flex-col w-full text-[18px] font-medium gap-y-[22px]">
               <li className="flex w-full">
                 <Link className="flex w-full justify-center" href={"/"}>
