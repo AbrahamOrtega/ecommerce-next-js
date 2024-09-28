@@ -26,8 +26,8 @@ const products = [
     name: "Leviosa",
     style: "Stylish cafe chair",
     price: 250,
-    descount: null,
-    priceBefore: null,
+    descount: "",
+    priceBefore: 0,
     image: "/products/leviosa.png",
     isNew: false,
   },
@@ -46,8 +46,8 @@ const products = [
     name: "Respira",
     style: "Outdoor bar table and stool",
     price: 500,
-    descount: null,
-    priceBefore: null,
+    descount: "",
+    priceBefore: 0,
     image: "/products/bar-table-stool.png",
     isNew: true,
   },
@@ -56,8 +56,8 @@ const products = [
     name: "Grifo",
     style: "Night lamp",
     price: 150,
-    descount: null,
-    priceBefore: null,
+    descount: "",
+    priceBefore: 0,
     image: "/products/night-lamp.png",
     isNew: false,
   },
@@ -66,8 +66,8 @@ const products = [
     name: "Muggo",
     style: "Small mug",
     price: 50,
-    descount: null,
-    priceBefore: null,
+    descount: "",
+    priceBefore: 0,
     image: "/products/small-mug.png",
     isNew: true,
   },
@@ -86,8 +86,8 @@ const products = [
     name: "Potty",
     style: "Minimalist flower pot",
     price: 30,
-    descount: null,
-    priceBefore: null,
+    descount: "",
+    priceBefore: 0,
     image: "/products/mini-flower-pot.png",
     isNew: true,
   },
@@ -185,7 +185,7 @@ export default function Home() {
             width={10000}
             height={500}
           />
-          <div className="absolute w-full h-full flex items-center px-[16px] lg:pr-[56px]">
+          <div className="absolute w-full h-full flex items-center px-[40px] lg:pr-[80px]">
             <div className="hidden lg:flex w-1/2"></div>
             <div className="flex flex-col w-full lg:w-1/2 bg-[#FFF3E3] rounded-[16px] py-[36px] px-[28px] gap-y-[24px]">
               <span className="font-semibold text-[16px]">Recien llegado</span>
@@ -254,9 +254,9 @@ export default function Home() {
         </div>
 
         {/* Products */}
-        <div className="flex flex-col w-full items-center px-[36px] lg:px-[56px] gap-y-[36px]">
+        <div className="flex flex-col w-full items-center gap-y-[64px]">
           <h1 className="text-[32px] font-bold">Productos</h1>
-          <ProductsList products={products} />
+          <ProductsList products={products} header={false} pagination={false} />
           <button className="hover:bg-[#B88E2F] border-2 border-[#B88E2F] text-[#B88E2F]  w-fit hover:text-white px-[32px] py-[16px] mt-[16px]">
             Ver Más
           </button>

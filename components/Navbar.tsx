@@ -27,7 +27,7 @@ export default function Navbar() {
 
         <ul className="flex text-[16px] font-medium gap-x-[56px]">
           <li>
-            <Link href={"/"}>Home</Link>
+            <Link href={"/"}>Inicio</Link>
           </li>
           <li>
             <Link href={"/shop"}>Comprar</Link>
@@ -71,7 +71,7 @@ export default function Navbar() {
             <ul className="flex flex-col w-full text-[18px] font-medium gap-y-[22px]">
               <li className="flex w-full">
                 <Link className="flex w-full justify-center" href={"/"}>
-                  Home
+                  Inicio
                 </Link>
               </li>
               <li className="flex w-full">

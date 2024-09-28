@@ -14,7 +14,7 @@ export default function Footer() {
         <div className="flex text-[16px] lg:text-[18px] font-medium">
           <div className="flex flex-col w-1/2 gap-y-[24px]">
             <p className="text-[#9F9F9F]">Enlaces</p>
-            <Link href="">Home</Link>
+            <Link href="">Inicio</Link>
             <Link href="">Comprar</Link>
             <Link href="">Acerca de</Link>
             <Link href="">Contacto</Link>
