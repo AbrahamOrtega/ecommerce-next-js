@@ -1,4 +1,4 @@
-import ProductsList from "@/components/ProductsList";
+import ProductsList from "@/components/ProductList";
 import Navbar from "../components/Navbar";
 import Image from "next/image";
 import { IoIosArrowForward } from "react-icons/io";

@@ -1,5 +1,5 @@
 import Navbar from "@/components/Navbar";
-import ProductsList from "@/components/ProductsList";
+import ProductsList from "@/components/ProductList";
 import Image from "next/image";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { FaCircle } from "react-icons/fa";
@@ -9,6 +9,7 @@ import { useState } from "react";
 import Footer from "@/components/Footer";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
+import SeeMoreBtn from "@/components/SeeMoreBtn";
 
 const products = [
   {
@@ -257,9 +258,7 @@ export default function Home() {
         <div className="flex flex-col w-full items-center gap-y-[64px]">
           <h1 className="text-[32px] font-bold">Productos</h1>
           <ProductsList products={products} header={false} pagination={false} />
-          <button className="hover:bg-[#B88E2F] border-2 border-[#B88E2F] text-[#B88E2F]  w-fit hover:text-white px-[32px] py-[16px] mt-[16px]">
-            Ver Más
-          </button>
+          <SeeMoreBtn />
         </div>
 
         {/* Rooms Inspiration Desktop */}

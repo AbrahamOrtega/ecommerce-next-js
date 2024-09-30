@@ -7,6 +7,7 @@ import { IoMdOptions } from "react-icons/io";
 import { IoGrid } from "react-icons/io5";
 import { MdOutlineViewDay } from "react-icons/md";
 import { useState } from "react";
+import Link from "next/link";
 
 export default function ProductsList(props: {
   products: ProductModel[];
@@ -93,9 +94,12 @@ export default function ProductsList(props: {
               className="flex flex-col bg-[#F4F5F7] relative"
             >
               <div className="absolute flex flex-col w-full h-full items-center justify-center  gap-y-[32px] bg-black bg-opacity-50 z-10 opacity-0 hover:opacity-100 pt-[64px] hover:pt-[0px] transition-all duration-300">
-                <button className="bg-white px-[24px] py-[16px] text-[16px] font-semibold text-[#B88E2F]">
+                <Link
+                  href={`/product/${product.id}`}
+                  className="bg-white px-[24px] py-[16px] text-[16px] font-semibold text-[#B88E2F]"
+                >
                   Agregar al carrito
-                </button>
+                </Link>
                 <div className="flex flex-wrap gap-y-[16px] w-full text-white text-[16px] justify-between px-[16px] lg:px-[24px] font-semibold">
                   <button className="flex items-center gap-x-[4px]">
                     <IoShareSocial className="text-[18px]" />
@@ -151,50 +155,52 @@ export default function ProductsList(props: {
         </div>
       </div>
       {/* Pagination */}
-      <div className="flex w-full items-center justify-center mt-[32px] lg:mt-[64px] gap-x-[12px] mb-[32px] text-[12px] lg:text-[16px]">
-        <button
-          className={`px-[12px] py-[8px] lg:px-[24px] lg:py-[16px] bg-[#F9F1E7] rounded-[8px] ${
-            currentPage === 1 && "opacity-50"
-          }`}
-          disabled={currentPage === 1}
-          onClick={handlePrevPage}
-        >
-          Anterior
-        </button>
-        <button
-          className={`px-[12px] py-[8px] lg:px-[24px] lg:py-[16px] ${
-            currentPage === 1 ? "bg-[#B88E2F] text-white" : "bg-[#F9F1E7]"
-          } rounded-[8px]`}
-          onClick={() => handlePagination(1)}
-        >
-          1
-        </button>
-        <button
-          className={`px-[12px] py-[8px] lg:px-[24px] lg:py-[16px] ${
-            currentPage === 2 ? "bg-[#B88E2F] text-white" : "bg-[#F9F1E7]"
-          } rounded-[8px]`}
-          onClick={() => handlePagination(2)}
-        >
-          2
-        </button>
-        <button
-          className={`px-[12px] py-[8px] lg:px-[24px] lg:py-[16px] ${
-            currentPage === 3 ? "bg-[#B88E2F] text-white" : "bg-[#F9F1E7]"
-          } rounded-[8px]`}
-          onClick={() => handlePagination(3)}
-        >
-          3
-        </button>
-        <button
-          className={`px-[12px] py-[8px] lg:px-[24px] lg:py-[16px] bg-[#F9F1E7] rounded-[8px] ${
-            currentPage === 3 && "opacity-50"
-          }`}
-          onClick={handleNextPage}
-          disabled={currentPage === 3}
-        >
-          Siguiente
-        </button>
-      </div>
+      {props.pagination && (
+        <div className="flex w-full items-center justify-center mt-[32px] lg:mt-[64px] gap-x-[12px] mb-[32px] text-[12px] lg:text-[16px]">
+          <button
+            className={`px-[12px] py-[8px] lg:px-[24px] lg:py-[16px] bg-[#F9F1E7] rounded-[8px] ${
+              currentPage === 1 && "opacity-50"
+            }`}
+            disabled={currentPage === 1}
+            onClick={handlePrevPage}
+          >
+            Anterior
+          </button>
+          <button
+            className={`px-[12px] py-[8px] lg:px-[24px] lg:py-[16px] ${
+              currentPage === 1 ? "bg-[#B88E2F] text-white" : "bg-[#F9F1E7]"
+            } rounded-[8px]`}
+            onClick={() => handlePagination(1)}
+          >
+            1
+          </button>
+          <button
+            className={`px-[12px] py-[8px] lg:px-[24px] lg:py-[16px] ${
+              currentPage === 2 ? "bg-[#B88E2F] text-white" : "bg-[#F9F1E7]"
+            } rounded-[8px]`}
+            onClick={() => handlePagination(2)}
+          >
+            2
+          </button>
+          <button
+            className={`px-[12px] py-[8px] lg:px-[24px] lg:py-[16px] ${
+              currentPage === 3 ? "bg-[#B88E2F] text-white" : "bg-[#F9F1E7]"
+            } rounded-[8px]`}
+            onClick={() => handlePagination(3)}
+          >
+            3
+          </button>
+          <button
+            className={`px-[12px] py-[8px] lg:px-[24px] lg:py-[16px] bg-[#F9F1E7] rounded-[8px] ${
+              currentPage === 3 && "opacity-50"
+            }`}
+            onClick={handleNextPage}
+            disabled={currentPage === 3}
+          >
+            Siguiente
+          </button>
+        </div>
+      )}
     </>
   );
 }
