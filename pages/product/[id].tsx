@@ -14,11 +14,13 @@ import Link from "next/link";
 import ProductList from "@/components/ProductList";
 import SeeMoreBtn from "@/components/SeeMoreBtn";
 import Footer from "@/components/Footer";
+import { useAppDispatch } from "@/store";
+import { addToCart } from "@/features/cartSlice";
 
 const Reviews = [
   {
     id: 124365476,
-    autor: "John Doe",
+    author: "John Doe",
     title: "Great product",
     review:
       "I love this product, it's amazing. I will buy more products from this store.",
@@ -27,7 +29,7 @@ const Reviews = [
   },
   {
     id: 124345476,
-    autor: "John Doe",
+    author: "John Doe",
     title: "Great product",
     review:
       "I love this product, it's amazing. I will buy more products from this store.",
@@ -36,7 +38,7 @@ const Reviews = [
   },
   {
     id: 124315576,
-    autor: "John Doe",
+    author: "John Doe",
     title: "Great product",
     review:
       "I love this product, it's amazing. I will buy more products from this store.",
@@ -48,6 +50,7 @@ const Reviews = [
 const product = {
   id: 12324546,
   name: "Asgaard GiSofa",
+  style: "Modern sofa", // Added style property
   pagraph:
     "Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound.",
   description:
@@ -118,6 +121,11 @@ const products = [
 ];
 
 export default function Product() {
+  // Handle cart
+  const dispatch = useAppDispatch();
+  const handleAddToCart = () => {
+    dispatch(addToCart({ product: product, stock: quantity }));
+  };
   // Handle tabs
   const [selectedTab, setSelectedTab] = useState("description");
 
@@ -284,7 +292,10 @@ export default function Product() {
                   <FaPlus />
                 </button>
               </div>
-              <button className="flex items-center justify-center w-[200px] h-[64px] bg-[#B88E2F] text-white rounded-[24px]">
+              <button
+                className="flex items-center justify-center w-[200px] h-[64px] bg-[#B88E2F] text-white rounded-[24px]"
+                onClick={handleAddToCart}
+              >
                 Agregar al carrito
               </button>
               <button className="flex items-center gap-x-[8px] justify-center w-[200px] h-[64px] border border-[#9F9F9F] rounded-[24px]">
@@ -436,7 +447,7 @@ export default function Product() {
                   </div>
                   <div className="flex items-center gap-x-[16px]">
                     <span className="text-[14px] text-[#9F9F9F]">
-                      Por {review.autor}
+                      Por {review.author}
                     </span>
                     <span className="flex">
                       {Array.from({ length: 5 }, (_, i) => (
