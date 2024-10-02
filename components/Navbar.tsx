@@ -136,8 +136,8 @@ export default function Navbar() {
       {/* Modal Cart */}
       {isCartOpen && (
         <div className="flex justify-end fixed w-full h-screen top-0 right-0 bg-slate-800 bg-opacity-50 z-20">
-          <div className="flex flex-col w-[600px] h-fit bg-white">
-            <div className="flex flex-col p-[40px] gap-y-[32px]">
+          <div className="flex flex-col w-full md:w-[600px] h-fit bg-white">
+            <div className="flex flex-col p-[40px] gap-y-[16px] md:gap-y-[32px]">
               <div className="flex text-[28px] items-center justify-between">
                 <h3 className="font-semibold">Carrito</h3>
                 <button onClick={handleCart}>
@@ -148,6 +148,7 @@ export default function Navbar() {
                 <div className="flex w-full border-t border-[#D9D9D9]" />
                 <div className="flex w-[80px]" />
               </div>
+              {/* Cart Items */}
               <div className="flex w-full flex-col">
                 {cart.products.map((product, index) => (
                   <div
@@ -155,7 +156,7 @@ export default function Navbar() {
                     className="flex w-full items-center gap-x-[16px]"
                   >
                     {/* Image */}
-                    <div className="flex w-[180px] h-[130px] bg-[#F9F1E7] rounded-[16px] relative">
+                    <div className="flex w-[160px] h-[90px] md:w-[180px] md:h-[130px] bg-[#F9F1E7] rounded-[16px] relative">
                       <Image
                         className="w-full h-full object-cover absolute"
                         src={product.images[0]}
@@ -166,12 +167,12 @@ export default function Navbar() {
                     </div>
 
                     <div className="flex flex-col w-full gap-y-[8px]">
-                      <h3 className="text-[18px] font-semibold">
+                      <h3 className="text-[16px] md:text-[18px] font-semibold">
                         {product.name}
                       </h3>
-                      <div className="flex gap-x-[16px] text-[18px] items-center">
+                      <div className="flex gap-x-[16px] text-[16px] md:text-[18px] items-center">
                         <span>{cart.stock[index]}</span>x
-                        <span className="text-[16px] text-[#B88E2F] font-medium">
+                        <span className="text-[14px] md:text-[16px] text-[#B88E2F] font-medium">
                           ${product.price}.00 USD
                         </span>
                       </div>
@@ -179,16 +180,16 @@ export default function Navbar() {
 
                     <div className="flex">
                       <button
-                        className="p-[8px] bg-[#9F9F9F] rounded-full"
+                        className="p-[6px] md:p-[8px] bg-[#9F9F9F] rounded-full"
                         onClick={() => dispatch(removeFromCart(product.id))}
                       >
-                        <IoClose className="text-[16px] text-white" />
+                        <IoClose className="text-[14xp] md:text-[16px] text-white" />
                       </button>
                     </div>
                   </div>
                 ))}
               </div>
-              <div className="flex w-[450px] justify-between mb-[-16px] items-center font-medium">
+              <div className="flex w-[80%] md:w-[450px] justify-between mb-[-16px] items-center font-medium">
                 <p>Subtotal</p>
                 <p className="text-[#B88E2F]">${subtotal}.00 USD</p>
               </div>
