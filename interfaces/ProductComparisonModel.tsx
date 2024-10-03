@@ -1,0 +1,30 @@
+export default interface ProductComparisonModel {
+  id: number;
+  name: string;
+  image: string;
+  price: number;
+  raiting: number;
+  reviews: number;
+  salesPackage: string;
+  modelNumber: string;
+  secondaryMaterial: string;
+  configuration: string;
+  upholsteryMaterial: string;
+  upholsteryColor: string;
+  fillingMaterial: string;
+  finishType: string;
+  adjustableHeardrest: string;
+  maxLoadCapacity: number;
+  originManufacture: string;
+  with: number;
+  height: number;
+  depth: number;
+  weight: number;
+  seatHeight: number;
+  legHeight: number;
+  warrantySummary: string;
+  warrantyServiceType: string;
+  coveredInWarranty: string;
+  notCoveredInWarranty: string;
+  domesticWarranty: string;
+}

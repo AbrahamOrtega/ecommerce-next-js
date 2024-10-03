@@ -1,9 +1,8 @@
 import ProductsList from "@/components/ProductList";
 import Navbar from "../components/Navbar";
-import Image from "next/image";
-import { IoIosArrowForward } from "react-icons/io";
 import FooterBanner from "@/components/FooterBanner";
 import Footer from "@/components/Footer";
+import BannerPage from "@/components/BannerPage";
 
 const products = [
   {
@@ -172,26 +171,7 @@ export default function Shop() {
   return (
     <>
       <Navbar />
-      <div className="flex w-full relative">
-        <div className="flex w-full pb-[170px] lg:pb-[300px] relative">
-          <Image
-            src="/shop-hero.png"
-            alt=""
-            className="absolute h-full w-full object-cover blur-[2px]"
-            width={10000}
-            height={10000}
-          />
-        </div>
-
-        <div className="flex flex-col w-full h-full absolute items-center justify-center gap-y-[16px]">
-          <h3 className="text-[32px] font-medium">Tienda</h3>
-          <div className="flex text-[18px] gap-x-[8px] items-center">
-            <span className="flex items-center font-medium">Inicio</span>
-            <IoIosArrowForward className="text-[20px]" />
-            <span>Tienda</span>
-          </div>
-        </div>
-      </div>
+      <BannerPage title="Tienda" />
       <div className="flex flex-col w-full gap-y-[64px]">
         <ProductsList products={products} header={true} pagination={true} />
         <FooterBanner />
