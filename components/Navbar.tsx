@@ -196,12 +196,16 @@ export default function Navbar() {
             </div>
             <div className="flex w-full border-t border-[#D9D9D9]" />
             <div className="flex w-full justify-center p-[20px] gap-x-[24px]">
-              <button className="px-[16px] py-[8px] bg-[#B88E2F] text-white rounded-[8px]">
-                Pagar
-              </button>
-              <button className="px-[16px] py-[8px] border rounded-[8px]">
-                Comparar
-              </button>
+              <Link href={"/cart"}>
+                <button className="px-[16px] py-[8px] bg-[#B88E2F] text-white rounded-[8px]">
+                  Pagar
+                </button>
+              </Link>
+              <Link href={"/comparison"}>
+                <button className="px-[16px] py-[8px] border rounded-[8px]">
+                  Comparar
+                </button>
+              </Link>
             </div>
           </div>
         </div>
