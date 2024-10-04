@@ -7,11 +7,12 @@ import Image from "next/image";
 import { MdDelete } from "react-icons/md";
 import FooterBanner from "@/components/FooterBanner";
 import Footer from "@/components/Footer";
+import { useRouter } from "next/navigation";
 
 export default function Cart() {
+  const router = useRouter();
   const cart = useAppSelector((state) => state.cart);
   const dispatch = useAppDispatch();
-  console.log(cart);
 
   // Subtotal
   const subtotal = cart.products.reduce((acc, product, index) => {
@@ -134,7 +135,16 @@ export default function Cart() {
               <p>Total</p>
               <p className="text-[#B88E2F]">${subtotal}.00 USD</p>
             </div>
-            <button className="px-[16px] py-[8px] mt-[32px] bg-[#B88E2F] text-white rounded-[8px]">
+
+            <button
+              onClick={() => router.push("/checkout")}
+              className={`px-[16px] py-[8px] mt-[32px] ${
+                cart.products.length === 0
+                  ? "opacity-50 cursor-not-allowed"
+                  : "opacity-100 cursor-pointer"
+              } bg-[#B88E2F] text-white  rounded-[8px]`}
+              disabled={cart.products.length === 0}
+            >
               Pagar
             </button>
           </div>
