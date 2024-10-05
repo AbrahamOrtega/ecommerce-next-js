@@ -53,6 +53,9 @@ export default function Navbar() {
             <Link href={"/about"}>About</Link>
           </li>
           <li>
+            <Link href={"/blogs"}>Blog</Link>
+          </li>
+          <li>
             <Link href={"/contact"}>Contacto</Link>
           </li>
         </ul>
@@ -100,6 +103,11 @@ export default function Navbar() {
               <li className="flex w-full">
                 <Link className="flex w-full justify-center" href={"/shop"}>
                   Comprar
+                </Link>
+              </li>
+              <li className="flex w-full">
+                <Link className="flex w-full justify-center" href={"/blogs"}>
+                  Blog
                 </Link>
               </li>
               <li className="flex w-full">

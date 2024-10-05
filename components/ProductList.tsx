@@ -159,7 +159,7 @@ export default function ProductsList(props: {
         <div className="flex w-full items-center justify-center mt-[32px] lg:mt-[64px] gap-x-[12px] mb-[32px] text-[12px] lg:text-[16px]">
           <button
             className={`px-[12px] py-[8px] lg:px-[24px] lg:py-[16px] bg-[#F9F1E7] rounded-[8px] ${
-              currentPage === 1 && "opacity-50"
+              currentPage === 1 && "opacity-50 cursor-not-allowed"
             }`}
             disabled={currentPage === 1}
             onClick={handlePrevPage}
@@ -192,7 +192,7 @@ export default function ProductsList(props: {
           </button>
           <button
             className={`px-[12px] py-[8px] lg:px-[24px] lg:py-[16px] bg-[#F9F1E7] rounded-[8px] ${
-              currentPage === 3 && "opacity-50"
+              currentPage === 3 && "opacity-50 cursor-not-allowed"
             }`}
             onClick={handleNextPage}
             disabled={currentPage === 3}
